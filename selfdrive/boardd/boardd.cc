@@ -161,7 +161,7 @@ bool usb_connect() {
   if (getenv("RECVMOCK")) {
     libusb_control_transfer(dev_handle, 0x40, 0xdc, SAFETY_ELM327, 0, NULL, 0, TIMEOUT);
   } else {
-    libusb_control_transfer(dev_handle, 0x40, 0xdc, SAFETY_NOOUTPUT, 0, NULL, 0, TIMEOUT);
+    libusb_control_transfer(dev_handle, 0x40, 0xdc, SAFETY_ALLOUTPUT, 0, NULL, 0, TIMEOUT);
   }
 
   if (safety_setter_thread_handle == -1) {

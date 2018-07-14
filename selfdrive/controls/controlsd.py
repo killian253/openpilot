@@ -453,7 +453,7 @@ def controlsd_thread(gctx=None, rate=100, default_bias=0.):
     sendcan = None
 
   if passive:
-    CP.safetyModel = car.CarParams.SafetyModels.noOutput
+    CP.safetyModel = car.CarParams.SafetyModels.honda
 
   fcw_enabled = params.get("IsFcwEnabled") == "1"
 

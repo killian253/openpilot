@@ -45,7 +45,7 @@ class CarInterface(object):
     ret.carName = "mock"
     ret.carFingerprint = candidate
 
-    ret.safetyModel = car.CarParams.SafetyModels.noOutput
+    ret.safetyModel = car.CarParams.SafetyModels.honda
 
     # FIXME: hardcoding honda civic 2016 touring params so they can be used to
     # scale unknown params for other cars
