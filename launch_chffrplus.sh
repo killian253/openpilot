@@ -5,15 +5,12 @@ if [ -z "$PASSIVE" ]; then
 fi
 
 function launch {
-  DO_UPDATE=$(cat /data/params/d/ShouldDoUpdate)
   # apply update
-  if [ "$DO_UPDATE" == "1" ] && [ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]; then
-     git reset --hard @{u} &&
-     git clean -xdf &&
-     exec "${BASH_SOURCE[0]}"
-     echo -n 0 > /data/params/d/ShouldDoUpdate
-     echo -n 0 > /data/params/d/IsUpdateAvailable
-  fi
+  #if [ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]; then
+  #   git reset --hard @{u} &&
+  #   git clean -xdf &&
+  #   exec "${BASH_SOURCE[0]}"
+  #fi
 
   # no cpu rationing for now
   echo 0-3 > /dev/cpuset/background/cpus
